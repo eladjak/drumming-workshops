@@ -53,9 +53,20 @@ export default function Contact() {
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setStatus("submitting");
-    // Simulate form submission
-    await new Promise((r) => setTimeout(r, 1500));
-    setStatus("success");
+    try {
+      const res = await fetch("/api/contact", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(formData),
+      });
+      if (res.ok) {
+        setStatus("success");
+      } else {
+        setStatus("error");
+      }
+    } catch {
+      setStatus("error");
+    }
   };
 
   return (
@@ -68,7 +79,7 @@ export default function Contact() {
 
       <div className="relative max-w-7xl mx-auto px-6">
         <motion.div
-          initial={{ opacity: 1, y: 30 }}
+          initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: "-80px" }}
           transition={{ duration: 0.7 }}
@@ -88,7 +99,7 @@ export default function Contact() {
         <div className="grid grid-cols-1 lg:grid-cols-5 gap-12 items-start">
           {/* Contact Info */}
           <motion.div
-            initial={{ opacity: 1, x: 30 }}
+            initial={{ opacity: 0, x: 30 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true, margin: "-80px" }}
             transition={{ duration: 0.7, delay: 0.2 }}
@@ -178,7 +189,7 @@ export default function Contact() {
 
           {/* Form */}
           <motion.div
-            initial={{ opacity: 1, x: -30 }}
+            initial={{ opacity: 0, x: -30 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true, margin: "-80px" }}
             transition={{ duration: 0.7, delay: 0.3 }}
@@ -186,7 +197,7 @@ export default function Contact() {
           >
             {status === "success" ? (
               <motion.div
-                initial={{ opacity: 1, scale: 0.9 }}
+                initial={{ opacity: 0, scale: 0.9 }}
                 animate={{ opacity: 1, scale: 1 }}
                 className="bg-amber-50 border border-amber-200 rounded-3xl p-12 text-center"
               >

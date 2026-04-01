@@ -70,7 +70,7 @@ export default function Testimonials() {
   const [activeIndex, setActiveIndex] = useState(0);
 
   const containerVariants: Variants = {
-    hidden: { opacity: 1 },
+    hidden: { opacity: 0 },
     visible: {
       opacity: 1,
       transition: { staggerChildren: 0.1 },
@@ -78,7 +78,7 @@ export default function Testimonials() {
   };
 
   const itemVariants: Variants = {
-    hidden: { opacity: 1, y: 30 },
+    hidden: { opacity: 0, y: 30 },
     visible: {
       opacity: 1,
       y: 0,
@@ -92,7 +92,7 @@ export default function Testimonials() {
 
       <div className="relative max-w-7xl mx-auto px-6">
         <motion.div
-          initial={{ opacity: 1, y: 30 }}
+          initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: "-80px" }}
           transition={{ duration: 0.7 }}
@@ -111,7 +111,7 @@ export default function Testimonials() {
 
         {/* Featured testimonial */}
         <motion.div
-          initial={{ opacity: 1, y: 30 }}
+          initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: "-80px" }}
           transition={{ duration: 0.7, delay: 0.2 }}

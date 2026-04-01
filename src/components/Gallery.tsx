@@ -33,7 +33,7 @@ const images = [
 ];
 
 const containerVariants: Variants = {
-  hidden: { opacity: 1 },
+  hidden: { opacity: 0 },
   visible: {
     opacity: 1,
     transition: { staggerChildren: 0.1 },
@@ -41,7 +41,7 @@ const containerVariants: Variants = {
 };
 
 const itemVariants: Variants = {
-  hidden: { opacity: 1, scale: 0.9 },
+  hidden: { opacity: 0, scale: 0.9 },
   visible: {
     opacity: 1,
     scale: 1,
@@ -74,7 +74,7 @@ export default function Gallery() {
 
       <div className="max-w-7xl mx-auto px-6">
         <motion.div
-          initial={{ opacity: 1, y: 30 }}
+          initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: "-80px" }}
           transition={{ duration: 0.7 }}
@@ -147,9 +147,9 @@ export default function Gallery() {
       <AnimatePresence>
         {selectedIndex !== null && (
           <motion.div
-            initial={{ opacity: 1 }}
+            initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
-            exit={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
             className="fixed inset-0 z-50 bg-black/90 flex items-center justify-center p-4"
             onClick={() => setSelectedIndex(null)}
           >
@@ -185,9 +185,9 @@ export default function Gallery() {
 
             <motion.div
               key={selectedIndex}
-              initial={{ scale: 0.9, opacity: 1 }}
+              initial={{ scale: 0.9, opacity: 0 }}
               animate={{ scale: 1, opacity: 1 }}
-              exit={{ scale: 0.9, opacity: 1 }}
+              exit={{ scale: 0.9, opacity: 0 }}
               className="relative max-w-4xl w-full aspect-video rounded-2xl overflow-hidden"
               onClick={(e) => e.stopPropagation()}
             >

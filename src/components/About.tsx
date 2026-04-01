@@ -26,7 +26,7 @@ const features = [
 ];
 
 const containerVariants: Variants = {
-  hidden: { opacity: 1 },
+  hidden: { opacity: 0 },
   visible: {
     opacity: 1,
     transition: { staggerChildren: 0.15 },
@@ -34,7 +34,7 @@ const containerVariants: Variants = {
 };
 
 const itemVariants: Variants = {
-  hidden: { opacity: 1, y: 30 },
+  hidden: { opacity: 0, y: 30 },
   visible: {
     opacity: 1,
     y: 0,
@@ -51,7 +51,7 @@ export default function About() {
 
       <div className="relative max-w-6xl mx-auto px-6">
         <motion.div
-          initial={{ opacity: 1, y: 30 }}
+          initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: "-100px" }}
           transition={{ duration: 0.7 }}
@@ -94,7 +94,7 @@ export default function About() {
 
         {/* Process steps */}
         <motion.div
-          initial={{ opacity: 1, y: 40 }}
+          initial={{ opacity: 0, y: 40 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: "-100px" }}
           transition={{ duration: 0.7, delay: 0.4 }}
