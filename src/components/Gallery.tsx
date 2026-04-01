@@ -11,9 +11,19 @@ const images = [
     caption: "מעגל תיפוף קבוצתי",
   },
   {
+    src: "/images/event-photo-1.jpg",
+    alt: "אירוע תיפוף חברה",
+    caption: "אירוע גיבוש בתיפוף",
+  },
+  {
     src: "/images/drumming-corporate.jpg",
     alt: "גיבוש חברות בתיפוף",
     caption: "גיבוש צוות בחברה",
+  },
+  {
+    src: "/images/event-photo-2.jpg",
+    alt: "סדנת תיפוף קבוצתית",
+    caption: "קבוצה בפעולה",
   },
   {
     src: "/images/drumming-about.jpg",
@@ -26,9 +36,34 @@ const images = [
     caption: "סדנה לבית ספר ומשפחות",
   },
   {
+    src: "/images/event-photo-3.jpg",
+    alt: "משתתפים מנגנים על תופים",
+    caption: "כולם מנגנים יחד",
+  },
+  {
     src: "/images/drumming-hands.jpg",
     alt: "ידיים על תופי ג'מבה",
     caption: "קצב משותף",
+  },
+  {
+    src: "/images/workshop-community.png",
+    alt: "סדנת תיפוף קהילתית",
+    caption: "תיפוף קהילתי",
+  },
+  {
+    src: "/images/gallery1.jpg",
+    alt: "רגע מסדנת תיפוף",
+    caption: "רגעים מהסדנה",
+  },
+  {
+    src: "/images/event-photo-5.jpg",
+    alt: "אירוע תיפוף גדול",
+    caption: "אירוע תיפוף מיוחד",
+  },
+  {
+    src: "/images/gallery2.jpg",
+    alt: "תופי ג'מבה במעגל",
+    caption: "מעגל תופים",
   },
 ];
 
@@ -96,7 +131,7 @@ export default function Gallery() {
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true, margin: "-80px" }}
-          className="grid grid-cols-2 md:grid-cols-3 gap-4"
+          className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4"
         >
           {images.map((image, index) => (
             <motion.div

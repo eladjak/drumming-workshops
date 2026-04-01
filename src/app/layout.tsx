@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Heebo } from "next/font/google";
+import Analytics from "@/components/Analytics";
 import "./globals.css";
 
 const heebo = Heebo({
@@ -81,6 +82,7 @@ export default function RootLayout({
         />
       </head>
       <body className={`${heebo.variable} antialiased`}>
+        <Analytics />
         <a
           href="#about"
           className="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:right-4 focus:z-[60] focus:bg-orange-500 focus:text-white focus:px-4 focus:py-2 focus:rounded-lg focus:font-bold"

@@ -1,55 +1,48 @@
 # drumming-workshops - Progress
 
-## Status: Ready for Review
+## Status: Production Ready
 ## Last Updated: 2026-04-01
 
 ## Current State
 All improvements complete. Build passes. TypeScript clean.
-Ready for eladjak hub subdomain integration.
+Ready for deployment as drumming.eladjak.com subdomain.
 
 ## Architecture
 - Next.js 15 + TypeScript + Tailwind CSS 4 + Framer Motion
 - Single page: Navbar > Hero > About > Audience > Gallery > Testimonials > Contact > Footer
 - Hebrew RTL, Heebo font, earthy warm colors (orange, brown, dark red)
-- 8 components in src/components/
+- 8 UI components + Analytics component
+- API route for contact form with Resend integration
 - Images in public/images/ (real photos + Gemini-generated)
 
-## Session 2026-04-01 - Full Quality Pass
+## Session 2026-04-01
 
-### Fixed
-- [x] All Framer Motion animations (opacity: 0 -> 1 pattern) across ALL 8 components
+### Commit 1: Fix animations, SEO, accessibility, 404
+- [x] Fixed all Framer Motion animations (opacity: 0 initial states) across all components
 - [x] Lightbox fade-in/fade-out in Gallery
 - [x] Mobile menu fade animation in Navbar
-- [x] Contact form now calls real API route (/api/contact)
+- [x] Contact form connected to API route
+- [x] SEO: sitemap.ts, robots.ts, JSON-LD, enhanced OG/Twitter metadata
+- [x] Accessibility: skip-to-content link
+- [x] Custom Hebrew 404 page
 
-### Added
-- [x] API route: src/app/api/contact/route.ts (POST with validation)
-- [x] SEO: sitemap.ts, robots.ts
-- [x] SEO: JSON-LD structured data (LocalBusiness schema)
-- [x] SEO: Enhanced metadata (OG image, Twitter card, canonical URL, keywords)
-- [x] SEO: metadataBase for drumming.eladjak.com
-- [x] Accessibility: Skip-to-content link
-- [x] Custom 404 page (Hebrew, on-brand)
+### Commit 2: Gallery expansion, Resend email, Analytics
+- [x] Gallery expanded from 5 to 12 images (4-column grid on desktop)
+- [x] Resend email integration for contact form (env var driven)
+- [x] Google Analytics component (env var driven, loads only with GA ID)
+- [x] .env.example with all required env vars
+- [x] Beautiful Hebrew email template for contact submissions
 
-### Remaining (for next session)
-- [ ] Replace placeholder contact info (050-123-4567) with real details
-- [ ] Connect API route to email service (Resend/SendGrid)
-- [ ] Add more gallery images (unused images in public/images/)
-- [ ] Analytics integration (GA4 or Plausible)
-- [ ] Configure deployment for eladjak hub subdomain
+## Env Vars Required for Production
+```
+NEXT_PUBLIC_GA_ID=G-XXXXXXXXXX
+RESEND_API_KEY=re_xxxxxxxxxxxx
+RESEND_FROM="סדנאות תיפוף <noreply@drumming.eladjak.com>"
+CONTACT_EMAIL=your-real-email@example.com
+```
 
-## Files Modified
-- src/components/Hero.tsx (animations fixed)
-- src/components/About.tsx (animations fixed)
-- src/components/Audience.tsx (animations fixed)
-- src/components/Gallery.tsx (animations + lightbox fixed)
-- src/components/Testimonials.tsx (animations fixed)
-- src/components/Contact.tsx (animations fixed + real API call)
-- src/components/Navbar.tsx (mobile menu animation fixed)
-- src/app/layout.tsx (enhanced metadata, JSON-LD, skip-to-content)
-
-## Files Created
-- src/app/api/contact/route.ts
-- src/app/sitemap.ts
-- src/app/robots.ts
-- src/app/not-found.tsx
+## Remaining (requires your input)
+- [ ] Replace placeholder contact info (050-123-4567, info@drumming.co.il) with real details
+- [ ] Set up Resend account + API key
+- [ ] Set up Google Analytics property + measurement ID
+- [ ] Deploy to Vercel/hosting + configure drumming.eladjak.com DNS
