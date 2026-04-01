@@ -53,8 +53,8 @@ const jsonLd = {
     "סדנאות תיפוף מקצועיות לחברות, אירועים, בתי ספר וקהילות",
   url: "https://drumming.eladjak.com",
   image: "https://drumming.eladjak.com/images/drumming-hero-wide.jpg",
-  telephone: "+972-50-123-4567",
-  email: "info@drumming.co.il",
+  telephone: "+972-52-542-7474",
+  email: "eladjak@gmail.com",
   address: {
     "@type": "PostalAddress",
     addressCountry: "IL",

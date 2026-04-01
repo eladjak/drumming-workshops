@@ -52,23 +52,23 @@ export default function Footer() {
             <ul className="space-y-3 text-sm">
               <li>
                 <a
-                  href="tel:+972501234567"
+                  href="tel:+972525427474"
                   className="flex items-center gap-2 hover:text-orange-400 transition-colors"
                 >
-                  📞 050-123-4567
+                  📞 052-542-7474
                 </a>
               </li>
               <li>
                 <a
-                  href="mailto:info@drumming.co.il"
+                  href="mailto:eladjak@gmail.com"
                   className="flex items-center gap-2 hover:text-orange-400 transition-colors"
                 >
-                  ✉️ info@drumming.co.il
+                  ✉️ eladjak@gmail.com
                 </a>
               </li>
               <li>
                 <a
-                  href="https://wa.me/972501234567"
+                  href="https://wa.me/972525427474"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="flex items-center gap-2 hover:text-orange-400 transition-colors"

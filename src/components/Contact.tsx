@@ -117,10 +117,10 @@ export default function Contact() {
                   <div>
                     <div className="text-amber-300 text-sm mb-1">טלפון</div>
                     <a
-                      href="tel:+972501234567"
+                      href="tel:+972525427474"
                       className="text-white font-bold text-lg hover:text-orange-300 transition-colors"
                     >
-                      050-123-4567
+                      052-542-7474
                     </a>
                   </div>
                 </div>
@@ -131,10 +131,10 @@ export default function Contact() {
                   <div>
                     <div className="text-amber-300 text-sm mb-1">אימייל</div>
                     <a
-                      href="mailto:info@drumming.co.il"
+                      href="mailto:eladjak@gmail.com"
                       className="text-white font-bold hover:text-orange-300 transition-colors"
                     >
-                      info@drumming.co.il
+                      eladjak@gmail.com
                     </a>
                   </div>
                 </div>
@@ -145,7 +145,7 @@ export default function Contact() {
                   <div>
                     <div className="text-amber-300 text-sm mb-1">וואטסאפ</div>
                     <a
-                      href="https://wa.me/972501234567"
+                      href="https://wa.me/972525427474"
                       target="_blank"
                       rel="noopener noreferrer"
                       className="text-white font-bold hover:text-orange-300 transition-colors"
@@ -171,13 +171,13 @@ export default function Contact() {
             {/* Quick contact buttons */}
             <div className="grid grid-cols-2 gap-4">
               <a
-                href="tel:+972501234567"
+                href="tel:+972525427474"
                 className="flex items-center justify-center gap-2 bg-orange-500 hover:bg-orange-400 text-white font-bold py-4 rounded-2xl transition-all hover:scale-105 shadow-md"
               >
                 📞 התקשרו
               </a>
               <a
-                href="https://wa.me/972501234567"
+                href="https://wa.me/972525427474"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="flex items-center justify-center gap-2 bg-green-600 hover:bg-green-500 text-white font-bold py-4 rounded-2xl transition-all hover:scale-105 shadow-md"
