@@ -59,5 +59,7 @@ RESEND_FROM="סדנאות תיפוף <noreply@drumming.eladjak.com>"
 CONTACT_EMAIL=eladjak@gmail.com
 ```
 
-## Remaining (DNS only)
-- [ ] Add A record `drumming` -> `76.76.21.21` in Cloudflare
+## Remaining
+- [x] DNS configured in Cloudflare (A drumming -> 76.76.21.21, DNS only)
+- [ ] Set RESEND_API_KEY in Vercel env vars (once Resend account created)
+- [ ] Set NEXT_PUBLIC_GA_ID in Vercel env vars (once GA property created)
