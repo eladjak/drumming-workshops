@@ -39,7 +39,7 @@ export async function POST(request: Request) {
 
     const emailHtml = `
       <div dir="rtl" style="font-family: Arial, sans-serif; max-width: 600px;">
-        <h2 style="color: #e87b2a;">פנייה חדשה מאתר סדנאות תיפוף</h2>
+        <h2 style="color: #e87b2a;">פנייה חדשה מאתר סדנאות קצב</h2>
         <table style="width: 100%; border-collapse: collapse;">
           <tr><td style="padding: 8px; font-weight: bold;">שם:</td><td style="padding: 8px;">${body.name}</td></tr>
           <tr><td style="padding: 8px; font-weight: bold;">טלפון:</td><td style="padding: 8px;"><a href="tel:${body.phone}">${body.phone}</a></td></tr>
@@ -55,9 +55,9 @@ export async function POST(request: Request) {
     if (process.env.RESEND_API_KEY) {
       const resend = new Resend(process.env.RESEND_API_KEY);
       await resend.emails.send({
-        from: process.env.RESEND_FROM ?? "סדנאות תיפוף <onboarding@resend.dev>",
+        from: process.env.RESEND_FROM ?? "סדנאות קצב <onboarding@resend.dev>",
         to: process.env.CONTACT_EMAIL ?? "eladjak@gmail.com",
-        subject: `פנייה חדשה מ${body.name} — סדנאות תיפוף`,
+        subject: `פנייה חדשה מ${body.name} — סדנאות קצב`,
         html: emailHtml,
         replyTo: body.email || undefined,
       });

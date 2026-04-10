@@ -19,8 +19,8 @@ export default function Hero() {
       {/* Background Image */}
       <div className="absolute inset-0">
         <Image
-          src="/images/drumming-hero-wide.jpg"
-          alt="סדנת תיפוף קבוצתית"
+          src="/images/bucket-drumming-hero.jpg"
+          alt="סדנת קצב קבוצתית עם דליים"
           fill
           priority
           className="object-cover"
@@ -78,7 +78,7 @@ export default function Hero() {
           transition={{ duration: 0.9, delay: 0.4, ease: "easeOut" }}
           className="text-xl md:text-2xl text-amber-100 mb-10 max-w-2xl mx-auto leading-relaxed font-light"
         >
-          סדנאות תיפוף מקצועיות שמחברות אנשים, מחזקות צוות ויוצרות זיכרונות
+          סדנאות קצב מקצועיות שמחברות אנשים, מחזקות צוות ויוצרות זיכרונות
           שלא ישכחו. לחברות, אירועים, בתי ספר וקהילות.
         </motion.p>
 

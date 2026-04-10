@@ -48,7 +48,7 @@ export default function Navbar() {
         >
           <span className="text-3xl">🥁</span>
           <span className="text-white font-bold text-xl tracking-wide group-hover:text-orange-300 transition-colors">
-            סדנאות תיפוף
+            סדנאות קצב
           </span>
         </button>
 

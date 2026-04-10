@@ -6,64 +6,64 @@ import Image from "next/image";
 
 const images = [
   {
+    src: "/images/bucket-drumming-hero.jpg",
+    alt: "מעגל קצב קבוצתי עם דליים",
+    caption: "מעגל קצב עם דליים",
+  },
+  {
+    src: "/images/bucket-hands-closeup.jpg",
+    alt: "ידיים מנגנות על דליים",
+    caption: "קצב משותף עם דליים",
+  },
+  {
+    src: "/images/bucket-corporate.jpg",
+    alt: "גיבוש צוות עם דליים",
+    caption: "גיבוש צוות בחברת הייטק",
+  },
+  {
+    src: "/images/bucket-kids.jpg",
+    alt: "ילדים מנגנים על דליים",
+    caption: "סדנת קצב לילדים",
+  },
+  {
     src: "/images/drumming-hero-wide.jpg",
-    alt: "מעגל תיפוף קבוצתי גדול",
-    caption: "מעגל תיפוף קבוצתי",
+    alt: "אירוע קצב קבוצתי גדול",
+    caption: "אירוע קצב קהילתי",
   },
   {
     src: "/images/event-photo-1.jpg",
-    alt: "אירוע תיפוף חברה",
-    caption: "אירוע גיבוש בתיפוף",
-  },
-  {
-    src: "/images/drumming-corporate.jpg",
-    alt: "גיבוש חברות בתיפוף",
-    caption: "גיבוש צוות בחברה",
-  },
-  {
-    src: "/images/event-photo-2.jpg",
-    alt: "סדנת תיפוף קבוצתית",
-    caption: "קבוצה בפעולה",
-  },
-  {
-    src: "/images/drumming-about.jpg",
-    alt: "סדנת תיפוף אפריקאי",
-    caption: "סדנת תיפוף אפריקאי",
-  },
-  {
-    src: "/images/drumming-families.jpg",
-    alt: "סדנת תיפוף לילדים ומשפחות",
-    caption: "סדנה לבית ספר ומשפחות",
+    alt: "אירוע גיבוש בקצב",
+    caption: "אירוע גיבוש",
   },
   {
     src: "/images/event-photo-3.jpg",
-    alt: "משתתפים מנגנים על תופים",
+    alt: "משתתפים מנגנים על דליים",
     caption: "כולם מנגנים יחד",
   },
   {
     src: "/images/drumming-hands.jpg",
-    alt: "ידיים על תופי ג'מבה",
+    alt: "ידיים על דליים ומקלות",
     caption: "קצב משותף",
   },
   {
     src: "/images/workshop-community.png",
-    alt: "סדנת תיפוף קהילתית",
-    caption: "תיפוף קהילתי",
+    alt: "סדנת קצב קהילתית",
+    caption: "קצב קהילתי",
   },
   {
     src: "/images/gallery1.jpg",
-    alt: "רגע מסדנת תיפוף",
+    alt: "רגע מסדנת קצב",
     caption: "רגעים מהסדנה",
   },
   {
     src: "/images/event-photo-5.jpg",
-    alt: "אירוע תיפוף גדול",
-    caption: "אירוע תיפוף מיוחד",
+    alt: "אירוע קצב גדול",
+    caption: "אירוע קצב מיוחד",
   },
   {
     src: "/images/gallery2.jpg",
-    alt: "תופי ג'מבה במעגל",
-    caption: "מעגל תופים",
+    alt: "דליים במעגל",
+    caption: "מעגל דליים",
   },
 ];
 

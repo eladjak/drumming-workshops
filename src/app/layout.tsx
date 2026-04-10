@@ -10,37 +10,37 @@ const heebo = Heebo({
 });
 
 export const metadata: Metadata = {
-  title: "סדנאות תיפוף | חוויה קצבית בלתי נשכחת",
+  title: "סדנאות קצב | חוויה קצבית בלתי נשכחת",
   description:
-    "סדנאות תיפוף מקצועיות לחברות, אירועים, בתי ספר וקהילות. חוויית גיבוש מיוחדת שמחברת אנשים דרך קצב ומוזיקה. 15+ שנות ניסיון, 500+ סדנאות.",
+    "סדנאות קצב מקצועיות לחברות, אירועים, בתי ספר וקהילות. חוויית גיבוש מיוחדת שמחברת אנשים דרך קצב ומוזיקה עם דליים ומקלות. 15+ שנות ניסיון, 500+ סדנאות.",
   keywords:
-    "סדנאות תיפוף, גיבוש חברות, team building, תיפוף, סדנה, אירועים, תיפוף אפריקאי, גיבוש צוות, סדנת תופים",
+    "סדנאות קצב, גיבוש חברות, team building, קצב עם דליים, סדנה, אירועים, bucket drumming, גיבוש צוות, סדנת קצב",
   metadataBase: new URL("https://drumming.eladjak.com"),
   alternates: {
     canonical: "/",
   },
   openGraph: {
-    title: "סדנאות תיפוף | חוויה קצבית בלתי נשכחת",
+    title: "סדנאות קצב | חוויה קצבית בלתי נשכחת",
     description:
-      "סדנאות תיפוף מקצועיות לחברות, אירועים, בתי ספר וקהילות. 15+ שנות ניסיון.",
+      "סדנאות קצב מקצועיות לחברות, אירועים, בתי ספר וקהילות. 15+ שנות ניסיון.",
     locale: "he_IL",
     type: "website",
     url: "https://drumming.eladjak.com",
-    siteName: "סדנאות תיפוף",
+    siteName: "סדנאות קצב",
     images: [
       {
         url: "/images/drumming-hero-wide.jpg",
         width: 1200,
         height: 630,
-        alt: "סדנת תיפוף קבוצתית",
+        alt: "סדנת קצב קבוצתית",
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "סדנאות תיפוף | חוויה קצבית בלתי נשכחת",
+    title: "סדנאות קצב | חוויה קצבית בלתי נשכחת",
     description:
-      "סדנאות תיפוף מקצועיות לחברות, אירועים, בתי ספר וקהילות.",
+      "סדנאות קצב מקצועיות לחברות, אירועים, בתי ספר וקהילות.",
     images: ["/images/drumming-hero-wide.jpg"],
   },
 };
@@ -48,9 +48,9 @@ export const metadata: Metadata = {
 const jsonLd = {
   "@context": "https://schema.org",
   "@type": "LocalBusiness",
-  name: "סדנאות תיפוף",
+  name: "סדנאות קצב",
   description:
-    "סדנאות תיפוף מקצועיות לחברות, אירועים, בתי ספר וקהילות",
+    "סדנאות קצב מקצועיות לחברות, אירועים, בתי ספר וקהילות — קצב עם דליים ומקלות",
   url: "https://drumming.eladjak.com",
   image: "https://drumming.eladjak.com/images/drumming-hero-wide.jpg",
   telephone: "+972-52-542-7474",

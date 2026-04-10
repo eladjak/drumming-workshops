@@ -12,11 +12,11 @@ export default function Footer() {
             <div className="flex items-center gap-2 mb-4">
               <span className="text-3xl">🥁</span>
               <span className="text-white font-black text-xl">
-                סדנאות תיפוף
+                סדנאות קצב
               </span>
             </div>
             <p className="text-amber-400/70 leading-relaxed text-sm">
-              חוויות תיפוף בלתי נשכחות לכל קבוצה. מחברים אנשים דרך הקצב.
+              חוויות קצב בלתי נשכחות לכל קבוצה. מחברים אנשים דרך הקצב.
             </p>
           </div>
 
@@ -25,7 +25,7 @@ export default function Footer() {
             <h4 className="text-white font-bold mb-4">ניווט מהיר</h4>
             <ul className="space-y-2 text-sm">
               {[
-                { href: "#about", label: "מה זה סדנת תיפוף?" },
+                { href: "#about", label: "מה זה סדנת קצב?" },
                 { href: "#audience", label: "למי מתאים?" },
                 { href: "#gallery", label: "גלריה" },
                 { href: "#testimonials", label: "המלצות" },
@@ -82,7 +82,7 @@ export default function Footer() {
         </div>
 
         <div className="border-t border-amber-800 pt-8 flex flex-col md:flex-row items-center justify-between gap-4 text-sm text-amber-500">
-          <p>© {currentYear} סדנאות תיפוף. כל הזכויות שמורות.</p>
+          <p>© {currentYear} סדנאות קצב. כל הזכויות שמורות.</p>
           <p className="text-amber-600">עוצב ונבנה עם ❤️ וקצב</p>
         </div>
       </div>
