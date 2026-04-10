@@ -29,6 +29,7 @@ export default function Footer() {
                 { href: "#audience", label: "למי מתאים?" },
                 { href: "#gallery", label: "גלריה" },
                 { href: "#testimonials", label: "המלצות" },
+                { href: "#faq", label: "שאלות נפוצות" },
                 { href: "#contact", label: "יצירת קשר" },
               ].map((link) => (
                 <li key={link.href}>
