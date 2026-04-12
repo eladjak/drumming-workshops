@@ -1,3 +1,11 @@
+<div align="center">
+
+⭐ If you find this project useful, please star it! ⭐
+
+[🇮🇱 עברית](README.he.md)
+
+</div>
+
 # Drumming Workshops
 
 A landing page for drumming workshops (Sadnaot Tipuf) by Elad Jakobovits. Features an engaging Hebrew RTL design with smooth animations, contact form integration via Resend, and a mobile-first responsive layout.
