@@ -145,7 +145,7 @@ export default function Contact() {
                   <div>
                     <div className="text-amber-300 text-sm mb-1">וואטסאפ</div>
                     <a
-                      href="https://wa.me/972525427474"
+                      href="https://wa.me/972525427474?text=שלום%20אלעד%2C%20פניתי%20דרך%20אתר%20סדנאות%20תיפוף"
                       target="_blank"
                       rel="noopener noreferrer"
                       className="text-white font-bold hover:text-orange-300 transition-colors"
@@ -177,7 +177,7 @@ export default function Contact() {
                 📞 התקשרו
               </a>
               <a
-                href="https://wa.me/972525427474"
+                href="https://wa.me/972525427474?text=שלום%20אלעד%2C%20פניתי%20דרך%20אתר%20סדנאות%20תיפוף"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="flex items-center justify-center gap-2 bg-green-600 hover:bg-green-500 text-white font-bold py-4 rounded-2xl transition-all hover:scale-105 shadow-md"

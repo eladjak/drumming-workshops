@@ -69,7 +69,7 @@ export default function Footer() {
               </li>
               <li>
                 <a
-                  href="https://wa.me/972525427474"
+                  href="https://wa.me/972525427474?text=שלום%20אלעד%2C%20פניתי%20דרך%20אתר%20סדנאות%20תיפוף"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="flex items-center gap-2 hover:text-orange-400 transition-colors"
