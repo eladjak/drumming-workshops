@@ -19,8 +19,8 @@ export default function Hero() {
       {/* Background Image */}
       <div className="absolute inset-0">
         <Image
-          src="/images/bucket-drumming-hero.jpg"
-          alt="סדנת קצב קבוצתית עם דליים"
+          src="/images/onedrive/event-0.jpg"
+          alt="רגע מאירוע קצב קהילתי"
           fill
           priority
           className="object-cover"

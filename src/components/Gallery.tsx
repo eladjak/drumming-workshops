@@ -4,66 +4,48 @@ import { motion, AnimatePresence, type Variants } from "framer-motion";
 import { useState } from "react";
 import Image from "next/image";
 
+// Wave-12: Real photos from Elad's actual events (קידושישי, OneDrive folder).
+// Replaces previously AI-generated floating-bucket imagery that misrepresented his real workshops.
 const images = [
   {
-    src: "/images/bucket-drumming-hero.jpg",
-    alt: "מעגל קצב קבוצתי עם דליים",
-    caption: "מעגל קצב עם דליים",
+    src: "/images/onedrive/event-0.jpg",
+    alt: "רגע מאירוע קצב — פרשת אמור",
+    caption: "אירוע קהילתי — פרשת אמור 2025",
   },
   {
-    src: "/images/bucket-hands-closeup.jpg",
-    alt: "ידיים מנגנות על דליים",
-    caption: "קצב משותף עם דליים",
+    src: "/images/onedrive/event-1.jpg",
+    alt: "השתתפות הקהל בערב קצב",
+    caption: "השתתפות פעילה של הקהל",
   },
   {
-    src: "/images/bucket-corporate.jpg",
-    alt: "גיבוש צוות עם דליים",
-    caption: "גיבוש צוות בחברת הייטק",
+    src: "/images/onedrive/event-2.jpg",
+    alt: "מעגל קצב קהילתי",
+    caption: "מעגל קצב קהילתי",
   },
   {
-    src: "/images/bucket-kids.jpg",
-    alt: "ילדים מנגנים על דליים",
-    caption: "סדנת קצב לילדים",
+    src: "/images/onedrive/event-3.jpg",
+    alt: "אירוע ל''ג בעומר עם קצב חי",
+    caption: "אירוע ל״ג בעומר",
   },
   {
-    src: "/images/drumming-hero-wide.jpg",
-    alt: "אירוע קצב קבוצתי גדול",
-    caption: "אירוע קצב קהילתי",
+    src: "/images/onedrive/event-4.jpg",
+    alt: "אירוע פרשת במדבר",
+    caption: "אירוע פרשת במדבר 2025",
+  },
+  {
+    src: "/images/onedrive/event-5.jpg",
+    alt: "רגעי שמחה באירוע קהילתי",
+    caption: "שמחה משותפת",
   },
   {
     src: "/images/event-photo-1.jpg",
-    alt: "אירוע גיבוש בקצב",
+    alt: "אירוע גיבוש",
     caption: "אירוע גיבוש",
   },
   {
     src: "/images/event-photo-3.jpg",
-    alt: "משתתפים מנגנים על דליים",
-    caption: "כולם מנגנים יחד",
-  },
-  {
-    src: "/images/drumming-hands.jpg",
-    alt: "ידיים על דליים ומקלות",
-    caption: "קצב משותף",
-  },
-  {
-    src: "/images/workshop-community.png",
-    alt: "סדנת קצב קהילתית",
-    caption: "קצב קהילתי",
-  },
-  {
-    src: "/images/gallery1.jpg",
-    alt: "רגע מסדנת קצב",
-    caption: "רגעים מהסדנה",
-  },
-  {
-    src: "/images/event-photo-5.jpg",
-    alt: "אירוע קצב גדול",
-    caption: "אירוע קצב מיוחד",
-  },
-  {
-    src: "/images/gallery2.jpg",
-    alt: "דליים במעגל",
-    caption: "מעגל דליים",
+    alt: "משתתפים בסדנת קצב",
+    caption: "כולם יחד",
   },
 ];
 
