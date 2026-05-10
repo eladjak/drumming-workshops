@@ -4,7 +4,7 @@ import About from "@/components/About";
 import Audience from "@/components/Audience";
 import Gallery from "@/components/Gallery";
 import Testimonials from "@/components/Testimonials";
-import FAQ from "@/components/FAQ";
+import FAQChat from "@/components/FAQChat";
 import Contact from "@/components/Contact";
 import Footer from "@/components/Footer";
 import WhatsAppButton from "@/components/WhatsAppButton";
@@ -19,7 +19,7 @@ export default function Home() {
       <Audience />
       <Gallery />
       <Testimonials />
-      <FAQ />
+      <FAQChat />
       <Contact />
       <Footer />
       <WhatsAppButton />
