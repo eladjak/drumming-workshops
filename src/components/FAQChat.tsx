@@ -21,7 +21,7 @@ export default function FAQChat() {
   const endRef = useRef<HTMLDivElement>(null)
 
   useEffect(() => {
-    endRef.current?.scrollIntoView({ behavior: "smooth" })
+    if (messages.length > 0) endRef.current?.scrollIntoView({ behavior: "smooth", block: "nearest" })
   }, [messages, loading])
 
   const send = async (text?: string) => {
