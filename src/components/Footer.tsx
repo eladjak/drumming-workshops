@@ -11,7 +11,7 @@ export default function Footer() {
           <div>
             <div className="flex items-center gap-2 mb-4">
               <span className="text-3xl">🥁</span>
-              <span className="text-white font-black text-xl">
+              <span className="font-display text-white text-xl">
                 סדנאות קצב
               </span>
             </div>

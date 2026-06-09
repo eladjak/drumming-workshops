@@ -101,7 +101,7 @@ export default function Testimonials() {
           <span className="text-orange-500 font-semibold text-sm tracking-widest uppercase mb-3 block">
             המלצות
           </span>
-          <h2 className="text-4xl md:text-5xl font-black text-amber-950 mb-6">
+          <h2 className="font-display text-4xl md:text-5xl text-amber-950 mb-6 text-balance">
             מה אומרים עלינו?
           </h2>
           <p className="text-xl text-amber-700 max-w-2xl mx-auto">

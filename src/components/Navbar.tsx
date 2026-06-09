@@ -47,7 +47,7 @@ export default function Navbar() {
           className="flex items-center gap-2 group"
         >
           <span className="text-3xl">🥁</span>
-          <span className="text-white font-bold text-xl tracking-wide group-hover:text-orange-300 transition-colors">
+          <span className="font-display text-white text-xl tracking-wide group-hover:text-orange-300 transition-colors">
             סדנאות קצב
           </span>
         </button>

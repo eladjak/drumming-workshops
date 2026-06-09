@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Heebo } from "next/font/google";
+import { Heebo, Suez_One } from "next/font/google";
 import Analytics from "@/components/Analytics";
 import "./globals.css";
 
@@ -7,6 +7,13 @@ const heebo = Heebo({
   variable: "--font-heebo",
   subsets: ["hebrew", "latin"],
   weight: ["300", "400", "500", "600", "700", "800", "900"],
+});
+
+// Distinctive bold display face for headings — gives this site its own identity.
+const suezOne = Suez_One({
+  variable: "--font-display",
+  subsets: ["hebrew", "latin"],
+  weight: ["400"],
 });
 
 export const metadata: Metadata = {
@@ -81,7 +88,7 @@ export default function RootLayout({
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
         />
       </head>
-      <body className={`${heebo.variable} antialiased`}>
+      <body className={`${heebo.variable} ${suezOne.variable} antialiased`}>
         <Analytics />
         <a
           href="#about"
