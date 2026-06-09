@@ -56,7 +56,7 @@ export async function POST(request: Request) {
       const resend = new Resend(process.env.RESEND_API_KEY);
       await resend.emails.send({
         from: process.env.RESEND_FROM ?? "סדנאות קצב <drumming@eladjak.com>",
-        to: process.env.CONTACT_EMAIL ?? "eladjak@gmail.com",
+        to: process.env.CONTACT_EMAIL ?? "eladjak.agents@gmail.com",
         subject: `פנייה חדשה מ${body.name} — סדנאות קצב`,
         html: emailHtml,
         replyTo: body.email || undefined,
