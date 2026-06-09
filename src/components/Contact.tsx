@@ -88,10 +88,10 @@ export default function Contact() {
           <span className="text-orange-500 font-semibold text-sm tracking-widest uppercase mb-3 block">
             הזמינו
           </span>
-          <h2 className="text-4xl md:text-5xl font-black text-amber-950 mb-6">
-            בואו נדפק יחד!
+          <h2 className="font-display text-4xl md:text-5xl text-amber-950 mb-6 text-balance">
+            בואו נדפוק יחד!
           </h2>
-          <p className="text-xl text-amber-700 max-w-2xl mx-auto">
+          <p className="text-lg md:text-xl text-amber-700 max-w-2xl mx-auto text-pretty">
             מלאו את הטופס ונחזור אליכם תוך 24 שעות עם הצעה מותאמת
           </p>
         </motion.div>
@@ -354,6 +354,15 @@ export default function Contact() {
                     className="w-full bg-white border border-amber-200 rounded-xl px-4 py-3 text-amber-950 placeholder-amber-300 focus:outline-none focus:border-orange-400 focus:ring-2 focus:ring-orange-100 transition-all resize-none"
                   />
                 </div>
+
+                {status === "error" && (
+                  <p
+                    role="alert"
+                    className="bg-red-50 border border-red-200 text-red-700 text-sm rounded-xl px-4 py-3 text-center"
+                  >
+                    אופס, משהו השתבש בשליחה. אפשר להתקשר 052-542-7474 או לנסות שוב.
+                  </p>
+                )}
 
                 <motion.button
                   type="submit"

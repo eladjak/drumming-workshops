@@ -105,7 +105,7 @@ export default function Gallery() {
           <span className="text-orange-400 font-semibold text-sm tracking-widest uppercase mb-3 block">
             גלריה
           </span>
-          <h2 className="text-4xl md:text-5xl font-black text-white mb-6">
+          <h2 className="font-display text-4xl md:text-5xl text-white mb-6 text-balance">
             הסדנאות שלנו
           </h2>
           <p className="text-xl text-amber-300 max-w-2xl mx-auto">

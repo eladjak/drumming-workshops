@@ -3,6 +3,13 @@
 import { motion, type Variants } from "framer-motion";
 import Image from "next/image";
 
+const featureAccent = [
+  "from-orange-400 to-amber-500",
+  "from-teal-500 to-emerald-600",
+  "from-fuchsia-500 to-rose-600",
+  "from-amber-500 to-orange-600",
+];
+
 const features = [
   {
     icon: "🎵",
@@ -61,10 +68,18 @@ export default function About() {
           <span className="text-orange-500 font-semibold text-sm tracking-widest uppercase mb-3 block">
             מה זה
           </span>
-          <h2 className="text-4xl md:text-5xl font-black text-amber-950 mb-6">
+          <h2 className="font-display text-4xl md:text-5xl text-amber-950 mb-6 text-balance">
             סדנת קצב?
           </h2>
-          <p className="text-xl text-amber-800 max-w-3xl mx-auto leading-relaxed">
+          {/* Decorative on-theme illustration */}
+          <Image
+            src="/images/drumming/illustration-drums.jpg"
+            alt="איור של שני דליי תיפוף עם מקלות מוצלבים וגלי קצב"
+            width={120}
+            height={120}
+            className="mx-auto mb-6 anim-float-soft rounded-2xl mix-blend-multiply"
+          />
+          <p className="text-lg md:text-xl text-amber-800 max-w-3xl mx-auto leading-relaxed text-pretty">
             סדנת קצב היא חוויה קבוצתית ייחודית בה כל המשתתפים מנגנים יחד על
             דליים ומקלות. ללא ניסיון מוזיקלי נדרש — רק רצון להנות,
             להתחבר ולהרגיש את הקצב.
@@ -94,13 +109,19 @@ export default function About() {
           viewport={{ once: true, margin: "-100px" }}
           className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-16"
         >
-          {features.map((feature) => (
+          {features.map((feature, i) => (
             <motion.div
               key={feature.title}
               variants={itemVariants}
-              className="bg-white rounded-2xl p-8 shadow-sm border border-amber-100 hover:shadow-md hover:border-orange-200 transition-all duration-300 group"
+              whileHover={{ y: -4 }}
+              transition={{ type: "spring", stiffness: 300, damping: 20 }}
+              className="bg-white rounded-2xl p-7 sm:p-8 shadow-sm border border-amber-100 hover:shadow-lg hover:border-orange-200 transition-shadow duration-200 group"
             >
-              <div className="text-4xl mb-4">{feature.icon}</div>
+              <div
+                className={`inline-grid place-items-center size-14 rounded-2xl bg-gradient-to-br ${featureAccent[i]} text-3xl mb-4 shadow-md`}
+              >
+                {feature.icon}
+              </div>
               <h3 className="text-xl font-bold text-amber-950 mb-2 group-hover:text-orange-600 transition-colors">
                 {feature.title}
               </h3>
@@ -117,10 +138,10 @@ export default function About() {
           transition={{ duration: 0.7, delay: 0.4 }}
           className="bg-gradient-to-l from-amber-900 to-amber-950 rounded-3xl p-10 text-white"
         >
-          <h3 className="text-2xl font-bold text-center mb-10 text-orange-300">
+          <h3 className="font-display text-2xl sm:text-3xl text-center mb-10 text-orange-300">
             איך זה עובד?
           </h3>
-          <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-6 sm:gap-8">
             {[
               { step: "1", title: "הגעה ופגישה", desc: "מדריך מקצועי מקבל את הקבוצה ומכיר את הדליים" },
               { step: "2", title: "חימום קצבי", desc: "תרגולי קצב בסיסיים שמחברים את כולם יחד" },

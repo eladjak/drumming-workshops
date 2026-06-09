@@ -19,9 +19,9 @@ const audiences = [
     subtitle: "הופעה שמחממת כל אירוע",
     desc: "חתונות, בר מצוות, ימי הולדת, מסיבות חברה — סדנת קצב מוסיפה אנרגיה ייחודית שמחממת את כל האירוע ומשאירה אורחים מאושרים.",
     perks: ["חתונות ואירועים", "ימי הולדת", "מסיבות חברה", "ערבי גיבוש"],
-    color: "from-red-700 to-red-800",
-    bg: "bg-red-50",
-    border: "border-red-200",
+    color: "from-fuchsia-600 to-rose-700",
+    bg: "bg-fuchsia-50",
+    border: "border-fuchsia-200",
   },
   {
     icon: "🎓",
@@ -39,9 +39,9 @@ const audiences = [
     subtitle: "חיבור קהילתי אמיתי",
     desc: "מועדוני נוער, בתי כנסת, מרכזי קהילה, ארגונים חברתיים — הקצב המשותף בונה גשרים ומחזק את תחושת השייכות.",
     perks: ["מועדוני נוער", "מרכזי קהילה", "ארגונים חברתיים", "קבוצות גיבוש"],
-    color: "from-stone-600 to-stone-700",
-    bg: "bg-stone-50",
-    border: "border-stone-200",
+    color: "from-teal-600 to-emerald-700",
+    bg: "bg-teal-50",
+    border: "border-teal-200",
   },
 ];
 
@@ -79,10 +79,10 @@ export default function Audience() {
           <span className="text-orange-500 font-semibold text-sm tracking-widest uppercase mb-3 block">
             למי מתאים
           </span>
-          <h2 className="text-4xl md:text-5xl font-black text-amber-950 mb-6">
+          <h2 className="font-display text-4xl md:text-5xl text-amber-950 mb-6 text-balance">
             לכל קבוצה יש קצב משלה
           </h2>
-          <p className="text-xl text-amber-700 max-w-2xl mx-auto">
+          <p className="text-lg md:text-xl text-amber-700 max-w-2xl mx-auto text-pretty">
             סדנאות הקצב שלנו מותאמות אישית לכל קהל ומטרה
           </p>
         </motion.div>
@@ -98,11 +98,13 @@ export default function Audience() {
             <motion.div
               key={audience.title}
               variants={itemVariants}
-              className={`${audience.bg} ${audience.border} border rounded-3xl p-8 hover:shadow-xl transition-all duration-300 group`}
+              whileHover={{ y: -4 }}
+              transition={{ type: "spring", stiffness: 300, damping: 20 }}
+              className={`${audience.bg} ${audience.border} border rounded-3xl p-7 sm:p-8 hover:shadow-xl transition-shadow duration-200 group`}
             >
-              <div className="flex items-start gap-5 mb-6">
+              <div className="flex items-start gap-4 sm:gap-5 mb-6">
                 <div
-                  className={`w-16 h-16 rounded-2xl bg-gradient-to-br ${audience.color} flex items-center justify-center text-3xl shadow-md flex-shrink-0`}
+                  className={`size-14 sm:size-16 rounded-2xl bg-gradient-to-br ${audience.color} flex items-center justify-center text-2xl sm:text-3xl shadow-md shrink-0`}
                 >
                   {audience.icon}
                 </div>
@@ -142,7 +144,7 @@ export default function Audience() {
           transition={{ duration: 0.7, delay: 0.3 }}
           className="mt-16 text-center bg-gradient-to-l from-orange-500 to-amber-600 rounded-3xl p-10 text-white"
         >
-          <h3 className="text-3xl font-black mb-4">
+          <h3 className="font-display text-2xl sm:text-3xl mb-4 text-balance">
             לא בטוחים מה מתאים לכם?
           </h3>
           <p className="text-orange-100 text-lg mb-8 max-w-2xl mx-auto">

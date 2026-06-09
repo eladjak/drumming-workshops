@@ -11,13 +11,55 @@ export default function Footer() {
           <div>
             <div className="flex items-center gap-2 mb-4">
               <span className="text-3xl">🥁</span>
-              <span className="text-white font-black text-xl">
+              <span className="font-display text-white text-xl">
                 סדנאות קצב
               </span>
             </div>
-            <p className="text-amber-400/70 leading-relaxed text-sm">
+            <p className="text-amber-400/70 leading-relaxed text-sm mb-4">
               חוויות קצב בלתי נשכחות לכל קבוצה. מחברים אנשים דרך הקצב.
             </p>
+            <div className="flex flex-wrap gap-x-4 gap-y-2 text-xs text-amber-400/70">
+              <a
+                href="https://www.eladjak.com"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="hover:text-orange-400 transition-colors"
+              >
+                אלעד יעקובוביץ&apos;
+              </a>
+              <a
+                href="https://fullstack-eladjak.co.il"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="hover:text-orange-400 transition-colors"
+              >
+                פיתוח Full-Stack
+              </a>
+              <a
+                href="https://teatron.eladjak.com"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="hover:text-orange-400 transition-colors"
+              >
+                סדנאות תיאטרון
+              </a>
+              <a
+                href="https://www.eladjak.com/about"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="hover:text-orange-400 transition-colors"
+              >
+                אודות המנחה
+              </a>
+              <a
+                href="https://he.wikipedia.org/wiki/%D7%AA%D7%99%D7%A4%D7%95%D7%A3"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="hover:text-orange-400 transition-colors"
+              >
+                מה זה תיפוף?
+              </a>
+            </div>
           </div>
 
           {/* Quick links */}
