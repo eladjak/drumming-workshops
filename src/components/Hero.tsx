@@ -19,8 +19,8 @@ export default function Hero() {
       {/* Background Image */}
       <div className="absolute inset-0">
         <Image
-          src="/images/onedrive/event-0.jpg"
-          alt="רגע מאירוע קצב קהילתי"
+          src="/images/drumming/hero-wide.jpg"
+          alt="מדריך וקבוצת משתתפים מתופפים על דליים במעגל בסדנת קצב"
           fill
           priority
           className="object-cover"

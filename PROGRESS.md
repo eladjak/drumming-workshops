@@ -1,5 +1,19 @@
 # drumming-workshops - Progress
 
+## 2026-06-09 — Real drumming photos shipped (commit 4a4e8b7)
+- Replaced 33 mismatched images (קידושישי events, ערבי שירה, AI/stock drum-circle) with 12 REAL bucket-drumming workshop photos (15.10.2024), web-optimized via sharp (q80 mozjpeg, ~1.6MB total).
+- Gallery (9), Hero (wide), About (detail), OG + JSON-LD all use real photos. Descriptive Hebrew alt on every image. Single H1.
+- Vercel env fixed: RESEND_FROM `onboarding@resend.dev` → `סדנאות קצב <drumming@eladjak.com>`; CONTACT_EMAIL `eladjak.agents@gmail.com` → `eladjak@gmail.com`.
+- safe-live-refactor: branch fix/real-drumming-images → preview (Ready) → prod. tsc clean, build green. Prod 200, old images 404.
+
+## 2026-05-28 — DORMANT — passive status entry
+
+**Last git commit:** fb5cecb 2026-05-11 — fix(chat): block:nearest + skip-empty scrollIntoView (date: 2026-05-11)
+**Status:** dormant — no recent work. PROGRESS.md not updated since the last commit. Reactivate by running a session and updating this file.
+
+---
+
+
 ## Status: Deployed
 ## Last Updated: 2026-04-01
 

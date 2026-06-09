@@ -29,7 +29,7 @@ export const metadata: Metadata = {
     siteName: "סדנאות קצב",
     images: [
       {
-        url: "/images/drumming-hero-wide.jpg",
+        url: "/images/drumming/og.jpg",
         width: 1200,
         height: 630,
         alt: "סדנת קצב קבוצתית",
@@ -41,7 +41,7 @@ export const metadata: Metadata = {
     title: "סדנאות קצב | חוויה קצבית בלתי נשכחת",
     description:
       "סדנאות קצב מקצועיות לחברות, אירועים, בתי ספר וקהילות.",
-    images: ["/images/drumming-hero-wide.jpg"],
+    images: ["/images/drumming/og.jpg"],
   },
 };
 
@@ -52,7 +52,7 @@ const jsonLd = {
   description:
     "סדנאות קצב מקצועיות לחברות, אירועים, בתי ספר וקהילות — קצב עם דליים ומקלות",
   url: "https://drumming.eladjak.com",
-  image: "https://drumming.eladjak.com/images/drumming-hero-wide.jpg",
+  image: "https://drumming.eladjak.com/images/drumming/og.jpg",
   telephone: "+972-52-542-7474",
   email: "eladjak@gmail.com",
   address: {

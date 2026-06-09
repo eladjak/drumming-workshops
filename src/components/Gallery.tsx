@@ -4,48 +4,53 @@ import { motion, AnimatePresence, type Variants } from "framer-motion";
 import { useState } from "react";
 import Image from "next/image";
 
-// Wave-12: Real photos from Elad's actual events (קידושישי, OneDrive folder).
-// Replaces previously AI-generated floating-bucket imagery that misrepresented his real workshops.
+// Real photos from an actual bucket-drumming workshop (15.10.2024).
+// Replaces earlier mismatched event photos (קידושישי / ערבי שירה) that did not show drumming.
 const images = [
   {
-    src: "/images/onedrive/event-0.jpg",
-    alt: "רגע מאירוע קצב — פרשת אמור",
-    caption: "אירוע קהילתי — פרשת אמור 2025",
+    src: "/images/drumming/g1.jpg",
+    alt: "מדריך מדגים תיפוף על דליים מול מעגל משתתפים בסדנת קצב",
+    caption: "מעגל תיפוף עם המדריך",
   },
   {
-    src: "/images/onedrive/event-1.jpg",
-    alt: "השתתפות הקהל בערב קצב",
-    caption: "השתתפות פעילה של הקהל",
+    src: "/images/drumming/g2.jpg",
+    alt: "המדריך מניף מקלות תיפוף באנרגיה בזמן סדנת קצב על דליים",
+    caption: "האנרגיה של הקצב",
   },
   {
-    src: "/images/onedrive/event-2.jpg",
-    alt: "מעגל קצב קהילתי",
-    caption: "מעגל קצב קהילתי",
+    src: "/images/drumming/g3.jpg",
+    alt: "ילדים יושבים במעגל ומתופפים על דליים עם מקלות בסדנת קצב",
+    caption: "כולם מתופפים יחד",
   },
   {
-    src: "/images/onedrive/event-3.jpg",
-    alt: "אירוע ל''ג בעומר עם קצב חי",
-    caption: "אירוע ל״ג בעומר",
+    src: "/images/drumming/g4.jpg",
+    alt: "ילדים אוחזים מקלות ומתופפים על דליי קצב בסדנה",
+    caption: "מקלות, דליים והרבה קצב",
   },
   {
-    src: "/images/onedrive/event-4.jpg",
-    alt: "אירוע פרשת במדבר",
-    caption: "אירוע פרשת במדבר 2025",
+    src: "/images/drumming/g5.jpg",
+    alt: "קבוצת ילדים מתופפת על דליים במעגל בהדרכת מדריך מקצועי",
+    caption: "מעגל קצב קבוצתי",
   },
   {
-    src: "/images/onedrive/event-5.jpg",
-    alt: "רגעי שמחה באירוע קהילתי",
-    caption: "שמחה משותפת",
+    src: "/images/drumming/g6.jpg",
+    alt: "המדריך יושב במרכז ומלמד את הקבוצה להקיש בקצב על דליים",
+    caption: "לומדים את הקצב",
   },
   {
-    src: "/images/event-photo-1.jpg",
-    alt: "אירוע גיבוש",
-    caption: "אירוע גיבוש",
+    src: "/images/drumming/g7.jpg",
+    alt: "מבוגרים וילדים מתופפים יחד על דליים בסדנת קצב משותפת",
+    caption: "סדנה לכל הגילאים",
   },
   {
-    src: "/images/event-photo-3.jpg",
-    alt: "משתתפים בסדנת קצב",
-    caption: "כולם יחד",
+    src: "/images/drumming/g8.jpg",
+    alt: "מעגל משתתפים מתופף על דליים אדומים בסדנת קצב",
+    caption: "התופים נכנסים לקצב",
+  },
+  {
+    src: "/images/drumming/g9.jpg",
+    alt: "ערימת דליי תיפוף אדומים ולבנים מוכנה לסדנת קצב",
+    caption: "הדליים מוכנים לסדנה",
   },
 ];
 
