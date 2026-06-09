@@ -77,3 +77,6 @@ CONTACT_EMAIL=eladjak@gmail.com
 - [x] DNS configured in Cloudflare (A drumming -> 76.76.21.21, DNS only)
 - [ ] Set RESEND_API_KEY in Vercel env vars (once Resend account created)
 - [ ] Set NEXT_PUBLIC_GA_ID in Vercel env vars (once GA property created)
+
+## Closeout (2026-06-09)
+- Added public/llms.txt (was 404) — site description + services + contact. Redeployed + verified 200.
