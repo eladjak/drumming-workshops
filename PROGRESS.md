@@ -1,5 +1,16 @@
 # drumming-workshops - Progress
 
+## 2026-06-10 — Hero + global polish, GEO 78→100 (commits 46eb7f7, f2e80df)
+- HERO: replaced bg with cinematic FLUX-generated bucket-drumming image (public/images/drumming/hero-drum.jpg, 164KB) — far more flattering/high-impact than old indoor hero-wide.jpg. Added rhythm ripple rings + prefers-reduced-motion guards, responsive sizing.
+- IDENTITY: new Suez_One display font for headings + logo (distinct from Heebo-only sibling sites); Heebo stays for body.
+- COLOR: fuchsia/teal accents (Audience, About icons, FAQ), gradient scrollbar, tabular-nums.
+- FAQ CHAT: chat header w/ avatar + online status, AnimatePresence entrance, always-visible suggested questions, aria-live + labeled input, gradient RTL-correct send button. send() logic unchanged; tested E2E.
+- ANIMATION: transform/opacity-only keyframes, ≤200ms, global prefers-reduced-motion media query.
+- ILLUSTRATION: original on-theme flat drum illustration (FLUX) in About.
+- CONTACT: visible error-state banner; Hebrew typo נדפק→נדפוק.
+- SEO: 5-schema JSON-LD bundle (WebSite+LocalBusiness/ProfessionalService+Person+WebPage+FAQPage) + 5 external citation links in <main>. GEO score 78→100/100.
+- safe-live-refactor: branch → tsc clean → next build green → Vercel preview Ready → 2-lens review cleared → prod. drumming.eladjak.com 200 from VPS.
+
 ## 2026-06-09 — Real drumming photos shipped (commit 4a4e8b7)
 - Replaced 33 mismatched images (קידושישי events, ערבי שירה, AI/stock drum-circle) with 12 REAL bucket-drumming workshop photos (15.10.2024), web-optimized via sharp (q80 mozjpeg, ~1.6MB total).
 - Gallery (9), Hero (wide), About (detail), OG + JSON-LD all use real photos. Descriptive Hebrew alt on every image. Single H1.
