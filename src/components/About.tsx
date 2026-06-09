@@ -1,6 +1,7 @@
 "use client";
 
 import { motion, type Variants } from "framer-motion";
+import Image from "next/image";
 
 const features = [
   {
@@ -68,6 +69,22 @@ export default function About() {
             דליים ומקלות. ללא ניסיון מוזיקלי נדרש — רק רצון להנות,
             להתחבר ולהרגיש את הקצב.
           </p>
+        </motion.div>
+
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, margin: "-100px" }}
+          transition={{ duration: 0.7 }}
+          className="relative w-full aspect-video md:aspect-[21/9] rounded-3xl overflow-hidden shadow-lg mb-16"
+        >
+          <Image
+            src="/images/drumming/about.jpg"
+            alt="מדריך מדגים תיפוף על דליים מול מעגל משתתפים בסדנת קצב אמיתית"
+            fill
+            className="object-cover"
+            sizes="(max-width: 768px) 100vw, 1152px"
+          />
         </motion.div>
 
         <motion.div
