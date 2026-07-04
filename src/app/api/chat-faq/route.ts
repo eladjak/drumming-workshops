@@ -27,13 +27,19 @@ export async function POST(req: Request) {
       .join("\n")
     const fullPrompt = `${SYSTEM_PROMPT}\n\nשיחה עד כה:\n${conversationText}\n\nאסיסטנט:`
     const r = await fetch(
-      "https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent",
+      "https://generativelanguage.googleapis.com/v1beta/models/gemini-3.5-flash:generateContent",
       {
         method: "POST",
         headers: { "Content-Type": "application/json", "x-goog-api-key": apiKey },
         body: JSON.stringify({
           contents: [{ parts: [{ text: fullPrompt }] }],
-          generationConfig: { temperature: 0.6, maxOutputTokens: 350 },
+          generationConfig: {
+            temperature: 0.6,
+            maxOutputTokens: 600,
+            // thinkingBudget:0 — without it Gemini Flash burns the token budget on
+            // thinking and truncates the visible answer (verified bug 2026-05-27).
+            thinkingConfig: { thinkingBudget: 0 },
+          },
         }),
       },
     )
