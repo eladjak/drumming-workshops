@@ -1,5 +1,11 @@
 # drumming-workshops - Progress
 
+## 2026-07-06 — Real Gemini knowledge chat LIVE in production ✅ (prod-push run)
+
+Merged `fix/chat-live-recipe` → master (FF) and deployed to prod (https://drumming.eladjak.com). recipe+key fix (route existed). Proven Gemini recipe (gemini-3.5-flash + thinkingBudget:0), server-side GEMINI_API_KEY (confirmed present in Vercel Production), site-grounded system prompt.
+- **Verified live:** `POST https://drumming.eladjak.com/api/chat-faq` → HTTP 200 with a real, site-specific Hebrew answer. Backup branch `backup/master-pre-prod-push-20260706`.
+
+
 ## 2026-06-10 — Hero + global polish, GEO 78→100 (commits 46eb7f7, f2e80df)
 - HERO: replaced bg with cinematic FLUX-generated bucket-drumming image (public/images/drumming/hero-drum.jpg, 164KB) — far more flattering/high-impact than old indoor hero-wide.jpg. Added rhythm ripple rings + prefers-reduced-motion guards, responsive sizing.
 - IDENTITY: new Suez_One display font for headings + logo (distinct from Heebo-only sibling sites); Heebo stays for body.
