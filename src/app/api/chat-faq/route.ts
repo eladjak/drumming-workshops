@@ -1,4 +1,5 @@
 import { NextResponse } from "next/server"
+import { aiGuard } from "@/lib/ai-guard";
 import { matchFaqAnswer } from "./faq-knowledge"
 
 export const runtime = "nodejs"
@@ -86,6 +87,13 @@ export async function POST(req: Request) {
       const controller = new AbortController()
       const timeout = setTimeout(() => controller.abort(), 12_000)
       try {
+        // Spend guard: public unauthenticated endpoint on Elad's own Gemini key.
+        // Per-IP window plus a SHARED per-site daily ceiling, so the cap holds
+        // across serverless instances rather than resetting on every cold start.
+        const _guard = await aiGuard(req, "drumming-workshops");
+        if (!_guard.ok) {
+          return NextResponse.json({ content: "העוזר עמוס כרגע — אפשר לנסות שוב מאוחר יותר, או להשאיר פרטים בטופס ונחזור אליכם." });
+        }
         const r = await fetch(
           `https://generativelanguage.googleapis.com/v1beta/models/${model}:generateContent`,
           {
