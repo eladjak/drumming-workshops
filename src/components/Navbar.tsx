@@ -67,7 +67,7 @@ export default function Navbar() {
           <li>
             <button
               onClick={() => handleLinkClick("#contact")}
-              className="bg-orange-500 hover:bg-orange-400 text-white font-bold px-6 py-2 rounded-full transition-all duration-200 hover:scale-105 shadow-md"
+              className="bg-orange-700 hover:bg-orange-800 text-white font-bold px-6 py-2 rounded-full transition-all duration-200 hover:scale-105 shadow-md"
             >
               הזמינו סדנה
             </button>
@@ -116,7 +116,7 @@ export default function Navbar() {
               <li>
                 <button
                   onClick={() => handleLinkClick("#contact")}
-                  className="bg-orange-500 hover:bg-orange-400 text-white font-bold px-8 py-3 rounded-full transition-all"
+                  className="bg-orange-700 hover:bg-orange-800 text-white font-bold px-8 py-3 rounded-full transition-all"
                 >
                   הזמינו סדנה
                 </button>
