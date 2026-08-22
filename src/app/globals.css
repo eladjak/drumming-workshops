@@ -92,3 +92,14 @@ body {
     transition-duration: 0.001ms !important;
   }
 }
+
+/* Hebrew RTL trap 12: date/time widgets are LTR controls. The dir="ltr"
+   attribute alone loses to the inherited body{direction:rtl}, so state it
+   as an author rule that matches the element directly. */
+input[type="date"],
+input[type="time"],
+input[type="tel"],
+input[type="email"],
+input[type="url"] {
+  direction: ltr;
+}

@@ -62,7 +62,7 @@ function FAQItem({ q, a }: { q: string; a: string }) {
       >
         <span className="text-lg font-bold text-amber-950">{q}</span>
         <span
-          className={`text-orange-500 text-2xl flex-shrink-0 transition-transform duration-200 ${open ? "rotate-45" : ""}`}
+          className={`text-orange-700 text-2xl flex-shrink-0 transition-transform duration-200 ${open ? "rotate-45" : ""}`}
         >
           +
         </span>
@@ -87,7 +87,7 @@ export default function FAQ() {
           transition={{ duration: 0.7 }}
           className="text-center mb-12"
         >
-          <span className="text-orange-500 font-semibold text-sm tracking-widest uppercase mb-3 block">
+          <span className="text-orange-700 font-semibold text-sm tracking-widest uppercase mb-3 block">
             שאלות נפוצות
           </span>
           <h2 className="text-4xl md:text-5xl font-black text-amber-950">

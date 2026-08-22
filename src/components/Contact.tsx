@@ -85,7 +85,7 @@ export default function Contact() {
           transition={{ duration: 0.7 }}
           className="text-center mb-16"
         >
-          <span className="text-orange-500 font-semibold text-sm tracking-widest uppercase mb-3 block">
+          <span className="text-orange-700 font-semibold text-sm tracking-widest uppercase mb-3 block">
             הזמינו
           </span>
           <h2 className="font-display text-4xl md:text-5xl text-amber-950 mb-6 text-balance">
@@ -172,7 +172,7 @@ export default function Contact() {
             <div className="grid grid-cols-2 gap-4">
               <a
                 href="tel:+972525427474"
-                className="flex items-center justify-center gap-2 bg-orange-500 hover:bg-orange-400 text-white font-bold py-4 rounded-2xl transition-all hover:scale-105 shadow-md"
+                className="flex items-center justify-center gap-2 bg-orange-700 hover:bg-orange-800 text-white font-bold py-4 rounded-2xl transition-all hover:scale-105 shadow-md"
               >
                 📞 התקשרו
               </a>
@@ -180,7 +180,7 @@ export default function Contact() {
                 href="https://wa.me/972525427474?text=שלום%20אלעד%2C%20פניתי%20דרך%20אתר%20סדנאות%20תיפוף"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex items-center justify-center gap-2 bg-green-600 hover:bg-green-500 text-white font-bold py-4 rounded-2xl transition-all hover:scale-105 shadow-md"
+                className="flex items-center justify-center gap-2 bg-green-700 hover:bg-green-800 text-white font-bold py-4 rounded-2xl transition-all hover:scale-105 shadow-md"
               >
                 💬 וואטסאפ
               </a>
@@ -242,6 +242,9 @@ export default function Contact() {
                     </label>
                     <input
                       type="tel"
+                      dir="ltr"
+                      inputMode="tel"
+                      autoComplete="tel"
                       id="phone"
                       name="phone"
                       required
@@ -262,6 +265,7 @@ export default function Contact() {
                   </label>
                   <input
                     type="email"
+                    dir="ltr"
                     id="email"
                     name="email"
                     value={formData.email}
@@ -329,6 +333,7 @@ export default function Contact() {
                   </label>
                   <input
                     type="date"
+                    dir="ltr"
                     id="date"
                     name="date"
                     value={formData.date}
@@ -369,7 +374,7 @@ export default function Contact() {
                   disabled={status === "submitting"}
                   whileHover={{ scale: 1.02 }}
                   whileTap={{ scale: 0.98 }}
-                  className="w-full bg-gradient-to-l from-orange-500 to-amber-500 hover:from-orange-400 hover:to-amber-400 disabled:opacity-70 disabled:cursor-not-allowed text-white font-black text-xl py-5 rounded-2xl transition-all duration-200 shadow-lg shadow-orange-200"
+                  className="w-full bg-gradient-to-l from-orange-700 to-amber-700 hover:from-orange-800 hover:to-amber-800 disabled:opacity-70 disabled:cursor-not-allowed text-white font-black text-xl py-5 rounded-2xl transition-all duration-200 shadow-lg shadow-orange-200"
                 >
                   {status === "submitting" ? (
                     <span className="flex items-center justify-center gap-3">
@@ -381,7 +386,7 @@ export default function Contact() {
                   )}
                 </motion.button>
 
-                <p className="text-amber-600 text-xs text-center">
+                <p className="text-amber-700 text-xs text-center">
                   ✓ אנו מגיבים תוך 24 שעות ✓ ללא התחייבות
                 </p>
               </form>

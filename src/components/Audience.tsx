@@ -76,7 +76,7 @@ export default function Audience() {
           transition={{ duration: 0.7 }}
           className="text-center mb-16"
         >
-          <span className="text-orange-500 font-semibold text-sm tracking-widest uppercase mb-3 block">
+          <span className="text-orange-700 font-semibold text-sm tracking-widest uppercase mb-3 block">
             למי מתאים
           </span>
           <h2 className="font-display text-4xl md:text-5xl text-amber-950 mb-6 text-balance">
@@ -112,7 +112,7 @@ export default function Audience() {
                   <h3 className="text-2xl font-black text-amber-950 mb-1 group-hover:text-orange-700 transition-colors">
                     {audience.title}
                   </h3>
-                  <p className="text-orange-600 font-semibold text-sm">
+                  <p className="text-orange-700 font-semibold text-sm">
                     {audience.subtitle}
                   </p>
                 </div>
@@ -142,7 +142,7 @@ export default function Audience() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: "-80px" }}
           transition={{ duration: 0.7, delay: 0.3 }}
-          className="mt-16 text-center bg-gradient-to-l from-orange-500 to-amber-600 rounded-3xl p-10 text-white"
+          className="mt-16 text-center bg-gradient-to-l from-orange-700 to-amber-700 rounded-3xl p-10 text-white"
         >
           <h3 className="font-display text-2xl sm:text-3xl mb-4 text-balance">
             לא בטוחים מה מתאים לכם?
@@ -155,7 +155,7 @@ export default function Audience() {
               const el = document.querySelector("#contact");
               if (el) el.scrollIntoView({ behavior: "smooth" });
             }}
-            className="bg-white text-orange-600 hover:bg-orange-50 font-bold text-lg px-10 py-4 rounded-full transition-all duration-200 hover:scale-105 shadow-lg"
+            className="bg-white text-orange-700 hover:bg-orange-50 font-bold text-lg px-10 py-4 rounded-full transition-all duration-200 hover:scale-105 shadow-lg"
           >
             דברו איתנו
           </button>

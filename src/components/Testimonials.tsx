@@ -10,7 +10,7 @@ const testimonials = [
     text: 'ארגנו סדנת קצב לצוות של 60 עובדים. לא ציפיתי לכזאת אנרגיה ושמחה! כולם היו מחוברים ומאושרים. בהחלט נחזור שוב.',
     rating: 5,
     avatar: "ש",
-    color: "bg-orange-500",
+    color: "bg-orange-700",
   },
   {
     name: "דני כהן",
@@ -42,7 +42,7 @@ const testimonials = [
     text: "עשינו עם צוות הפיתוח — מתכנתים רגילים לשבת מול מחשב. לראות אותם מנגנים יחד ומצחיקים זה שינה את כל האווירה של הצוות.",
     rating: 5,
     avatar: "נ",
-    color: "bg-orange-600",
+    color: "bg-orange-700",
   },
   {
     name: "רחל שמואל",
@@ -98,7 +98,7 @@ export default function Testimonials() {
           transition={{ duration: 0.7 }}
           className="text-center mb-16"
         >
-          <span className="text-orange-500 font-semibold text-sm tracking-widest uppercase mb-3 block">
+          <span className="text-orange-700 font-semibold text-sm tracking-widest uppercase mb-3 block">
             המלצות
           </span>
           <h2 className="font-display text-4xl md:text-5xl text-amber-950 mb-6 text-balance">
@@ -189,7 +189,7 @@ export default function Testimonials() {
                   <div className="font-bold text-amber-950 text-sm">
                     {testimonial.name}
                   </div>
-                  <div className="text-amber-600 text-xs">
+                  <div className="text-amber-700 text-xs">
                     {testimonial.role}
                   </div>
                 </div>

@@ -60,7 +60,7 @@ export default function Hero() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, ease: "easeOut" }}
         >
-          <span className="inline-block bg-orange-500/90 text-white text-xs sm:text-sm font-semibold px-4 py-2 rounded-full mb-6 tracking-wide">
+          <span className="inline-block bg-orange-700/95 text-white text-xs sm:text-sm font-semibold px-4 py-2 rounded-full mb-6 tracking-wide">
             🥁 חוויה קצבית בלתי נשכחת
           </span>
         </motion.div>
@@ -96,7 +96,7 @@ export default function Hero() {
             whileHover={reduce ? undefined : { scale: 1.05 }}
             whileTap={{ scale: 0.97 }}
             onClick={() => scrollTo("#contact")}
-            className="bg-orange-500 hover:bg-orange-400 text-white font-bold text-base sm:text-lg px-8 sm:px-10 py-4 rounded-full shadow-2xl shadow-orange-900/50 transition-colors duration-200 w-full sm:w-auto sm:min-w-48"
+            className="bg-orange-700 hover:bg-orange-800 text-white font-bold text-base sm:text-lg px-8 sm:px-10 py-4 rounded-full shadow-2xl shadow-orange-900/50 transition-colors duration-200 w-full sm:w-auto sm:min-w-48"
           >
             הזמינו סדנה עכשיו
           </motion.button>

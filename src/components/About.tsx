@@ -65,7 +65,7 @@ export default function About() {
           transition={{ duration: 0.7 }}
           className="text-center mb-16"
         >
-          <span className="text-orange-500 font-semibold text-sm tracking-widest uppercase mb-3 block">
+          <span className="text-orange-700 font-semibold text-sm tracking-widest uppercase mb-3 block">
             מה זה
           </span>
           <h2 className="font-display text-4xl md:text-5xl text-amber-950 mb-6 text-balance">
@@ -122,7 +122,7 @@ export default function About() {
               >
                 {feature.icon}
               </div>
-              <h3 className="text-xl font-bold text-amber-950 mb-2 group-hover:text-orange-600 transition-colors">
+              <h3 className="text-xl font-bold text-amber-950 mb-2 group-hover:text-orange-700 transition-colors">
                 {feature.title}
               </h3>
               <p className="text-amber-700 leading-relaxed">{feature.desc}</p>
@@ -149,7 +149,7 @@ export default function About() {
               { step: "4", title: "הסיום", desc: "תמונות, הרגשה מדהימה וזיכרון לכל החיים" },
             ].map((item) => (
               <div key={item.step} className="text-center">
-                <div className="w-12 h-12 bg-orange-500 rounded-full flex items-center justify-center text-white font-black text-xl mx-auto mb-4">
+                <div className="w-12 h-12 bg-orange-700 rounded-full flex items-center justify-center text-white font-black text-xl mx-auto mb-4">
                   {item.step}
                 </div>
                 <h4 className="font-bold text-orange-200 mb-2">{item.title}</h4>
