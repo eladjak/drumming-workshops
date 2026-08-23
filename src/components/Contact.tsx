@@ -104,7 +104,7 @@ export default function Contact() {
         setSubmitNotice(
           `הטופס לא נשלח. ${n === 1 ? "יש שדה אחד שצריך תיקון" : `יש ${n} שדות שצריכים תיקון`}: ${errs[first]}`
         );
-        document.getElementById(first)?.focus();
+        document.getElementById(`dw-${first}`)?.focus();
       }
       return;
     }
@@ -282,29 +282,29 @@ export default function Contact() {
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                   <div>
                     <label
-                      htmlFor="name"
+                      htmlFor="dw-name"
                       className="block text-amber-900 font-semibold mb-2 text-sm"
                     >
                       שם מלא *
                     </label>
                     <input
                       type="text"
-                      id="name"
+                      id="dw-name"
                       name="name"
                       required
                       aria-required="true"
                       aria-invalid={errors.name ? true : undefined}
-                      aria-describedby="name-error"
+                      aria-describedby="dw-name-error"
                       value={formData.name}
                       onChange={handleChange}
                       placeholder="ישראל ישראלי"
                       className="w-full bg-white border border-amber-200 rounded-xl px-4 py-3 text-amber-950 placeholder-amber-300 focus:outline-none focus:border-orange-400 focus:ring-2 focus:ring-orange-100 transition-all"
                     />
-                    <FieldError id="name-error" message={errors.name} />
+                    <FieldError id="dw-name-error" message={errors.name} />
                   </div>
                   <div>
                     <label
-                      htmlFor="phone"
+                      htmlFor="dw-phone"
                       className="block text-amber-900 font-semibold mb-2 text-sm"
                     >
                       טלפון *
@@ -314,24 +314,24 @@ export default function Contact() {
                       dir="ltr"
                       inputMode="tel"
                       autoComplete="tel"
-                      id="phone"
+                      id="dw-phone"
                       name="phone"
                       required
                       aria-required="true"
                       aria-invalid={errors.phone ? true : undefined}
-                      aria-describedby="phone-error"
+                      aria-describedby="dw-phone-error"
                       value={formData.phone}
                       onChange={handleChange}
                       placeholder="050-000-0000"
                       className="w-full bg-white border border-amber-200 rounded-xl px-4 py-3 text-amber-950 placeholder-amber-300 focus:outline-none focus:border-orange-400 focus:ring-2 focus:ring-orange-100 transition-all"
                     />
-                    <FieldError id="phone-error" message={errors.phone} />
+                    <FieldError id="dw-phone-error" message={errors.phone} />
                   </div>
                 </div>
 
                 <div>
                   <label
-                    htmlFor="email"
+                    htmlFor="dw-email"
                     className="block text-amber-900 font-semibold mb-2 text-sm"
                   >
                     אימייל
@@ -339,33 +339,33 @@ export default function Contact() {
                   <input
                     type="email"
                     dir="ltr"
-                    id="email"
+                    id="dw-email"
                     name="email"
                     aria-invalid={errors.email ? true : undefined}
-                    aria-describedby="email-error"
+                    aria-describedby="dw-email-error"
                     value={formData.email}
                     onChange={handleChange}
                     placeholder="israel@example.com"
                     className="w-full bg-white border border-amber-200 rounded-xl px-4 py-3 text-amber-950 placeholder-amber-300 focus:outline-none focus:border-orange-400 focus:ring-2 focus:ring-orange-100 transition-all"
                   />
-                  <FieldError id="email-error" message={errors.email} />
+                  <FieldError id="dw-email-error" message={errors.email} />
                 </div>
 
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                   <div>
                     <label
-                      htmlFor="audience"
+                      htmlFor="dw-audience"
                       className="block text-amber-900 font-semibold mb-2 text-sm"
                     >
                       סוג הקבוצה *
                     </label>
                     <select
-                      id="audience"
+                      id="dw-audience"
                       name="audience"
                       required
                       aria-required="true"
                       aria-invalid={errors.audience ? true : undefined}
-                      aria-describedby="audience-error"
+                      aria-describedby="dw-audience-error"
                       value={formData.audience}
                       onChange={handleChange}
                       className="w-full bg-white border border-amber-200 rounded-xl px-4 py-3 text-amber-950 focus:outline-none focus:border-orange-400 focus:ring-2 focus:ring-orange-100 transition-all"
@@ -377,22 +377,22 @@ export default function Contact() {
                         </option>
                       ))}
                     </select>
-                    <FieldError id="audience-error" message={errors.audience} />
+                    <FieldError id="dw-audience-error" message={errors.audience} />
                   </div>
                   <div>
                     <label
-                      htmlFor="groupSize"
+                      htmlFor="dw-groupSize"
                       className="block text-amber-900 font-semibold mb-2 text-sm"
                     >
                       גודל קבוצה *
                     </label>
                     <select
-                      id="groupSize"
+                      id="dw-groupSize"
                       name="groupSize"
                       required
                       aria-required="true"
                       aria-invalid={errors.groupSize ? true : undefined}
-                      aria-describedby="groupSize-error"
+                      aria-describedby="dw-groupSize-error"
                       value={formData.groupSize}
                       onChange={handleChange}
                       className="w-full bg-white border border-amber-200 rounded-xl px-4 py-3 text-amber-950 focus:outline-none focus:border-orange-400 focus:ring-2 focus:ring-orange-100 transition-all"
@@ -405,7 +405,7 @@ export default function Contact() {
                       ))}
                     </select>
                     <FieldError
-                      id="groupSize-error"
+                      id="dw-groupSize-error"
                       message={errors.groupSize}
                     />
                   </div>
@@ -413,7 +413,7 @@ export default function Contact() {
 
                 <div>
                   <label
-                    htmlFor="date"
+                    htmlFor="dw-date"
                     className="block text-amber-900 font-semibold mb-2 text-sm"
                   >
                     תאריך מועדף
@@ -421,7 +421,7 @@ export default function Contact() {
                   <input
                     type="date"
                     dir="ltr"
-                    id="date"
+                    id="dw-date"
                     name="date"
                     value={formData.date}
                     onChange={handleChange}
@@ -431,13 +431,13 @@ export default function Contact() {
 
                 <div>
                   <label
-                    htmlFor="message"
+                    htmlFor="dw-message"
                     className="block text-amber-900 font-semibold mb-2 text-sm"
                   >
                     פרטים נוספים
                   </label>
                   <textarea
-                    id="message"
+                    id="dw-message"
                     name="message"
                     rows={4}
                     value={formData.message}
