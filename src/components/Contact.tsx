@@ -30,6 +30,26 @@ const groupSizeOptions = [
   { value: "xlarge", label: "100+ אנשים" },
 ];
 
+// Visual order, so focus lands on the first field on the page rather than the
+// first key that happened to be validated.
+const FIELD_ORDER = ["name", "phone", "email", "audience", "groupSize"] as const;
+
+function FieldError({ id, message }: { id: string; message?: string }) {
+  // Always rendered, never conditionally mounted, so aria-describedby always
+  // has a target and the text can be injected into a region that already exists.
+  return (
+    <p id={id} aria-live="polite" className="mt-1 min-h-5 text-sm text-red-700">
+      {message ? (
+        <>
+          {/* a mark as well as the colour — failure is never carried by colour alone */}
+          <span aria-hidden="true">✕ </span>
+          {message}
+        </>
+      ) : null}
+    </p>
+  );
+}
+
 export default function Contact() {
   const [formData, setFormData] = useState<FormData>({
     name: "",
@@ -41,17 +61,55 @@ export default function Contact() {
     message: "",
   });
   const [status, setStatus] = useState<FormStatus>("idle");
+  const [errors, setErrors] = useState<Record<string, string>>({});
+  const [submitNotice, setSubmitNotice] = useState("");
 
   const handleChange = (
     e: React.ChangeEvent<
       HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement
     >
   ) => {
-    setFormData((prev) => ({ ...prev, [e.target.name]: e.target.value }));
+    const { name } = e.target;
+    setFormData((prev) => ({ ...prev, [name]: e.target.value }));
+    setErrors((prev) => (prev[name] ? { ...prev, [name]: "" } : prev));
   };
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
+
+    // noValidate is set on the form below, so the browser checks nothing. That
+    // is deliberate: without it the browser blocks first, onSubmit never runs,
+    // and this validation would be dead code. What the browser cannot do is
+    // leave anything in the DOM to point aria-describedby at, and its bubble
+    // follows the visitor's browser locale rather than this page's lang=he --
+    // an English-locale visitor gets an English error on a Hebrew form.
+    const errs: Record<string, string> = {};
+    if (!formData.name.trim()) errs.name = "צריך למלא שם מלא";
+    if (!formData.phone.trim()) errs.phone = "צריך למלא טלפון";
+    else if (!/^[\d\s()+-]{9,}$/.test(formData.phone.trim()))
+      errs.phone = "מספר הטלפון לא נראה תקין";
+    if (
+      formData.email.trim() &&
+      !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(formData.email.trim())
+    )
+      errs.email = "כתובת האימייל לא נראית תקינה";
+    if (!formData.audience) errs.audience = "צריך לבחור סוג קבוצה";
+    if (!formData.groupSize) errs.groupSize = "צריך לבחור גודל קבוצה";
+
+    setErrors(errs);
+    if (Object.keys(errs).length > 0) {
+      const first = FIELD_ORDER.find((f) => errs[f]);
+      if (first) {
+        const n = Object.keys(errs).length;
+        setSubmitNotice(
+          `הטופס לא נשלח. ${n === 1 ? "יש שדה אחד שצריך תיקון" : `יש ${n} שדות שצריכים תיקון`}: ${errs[first]}`
+        );
+        document.getElementById(`dw-${first}`)?.focus();
+      }
+      return;
+    }
+
+    setSubmitNotice("");
     setStatus("submitting");
     try {
       const res = await fetch("/api/contact", {
@@ -213,29 +271,40 @@ export default function Contact() {
               <form
                 onSubmit={handleSubmit}
                 className="bg-amber-50 border border-amber-100 rounded-3xl p-8 space-y-6"
+                noValidate
               >
+                {/* Mounted before it ever has content: a live region inserted
+                    at the same moment as its text is often not announced. */}
+                <p aria-live="assertive" className="sr-only">
+                  {submitNotice}
+                </p>
+
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                   <div>
                     <label
-                      htmlFor="name"
+                      htmlFor="dw-name"
                       className="block text-amber-900 font-semibold mb-2 text-sm"
                     >
                       שם מלא *
                     </label>
                     <input
                       type="text"
-                      id="name"
+                      id="dw-name"
                       name="name"
                       required
+                      aria-required="true"
+                      aria-invalid={errors.name ? true : undefined}
+                      aria-describedby="dw-name-error"
                       value={formData.name}
                       onChange={handleChange}
                       placeholder="ישראל ישראלי"
                       className="w-full bg-white border border-amber-200 rounded-xl px-4 py-3 text-amber-950 placeholder-amber-300 focus:outline-none focus:border-orange-400 focus:ring-2 focus:ring-orange-100 transition-all"
                     />
+                    <FieldError id="dw-name-error" message={errors.name} />
                   </div>
                   <div>
                     <label
-                      htmlFor="phone"
+                      htmlFor="dw-phone"
                       className="block text-amber-900 font-semibold mb-2 text-sm"
                     >
                       טלפון *
@@ -245,20 +314,24 @@ export default function Contact() {
                       dir="ltr"
                       inputMode="tel"
                       autoComplete="tel"
-                      id="phone"
+                      id="dw-phone"
                       name="phone"
                       required
+                      aria-required="true"
+                      aria-invalid={errors.phone ? true : undefined}
+                      aria-describedby="dw-phone-error"
                       value={formData.phone}
                       onChange={handleChange}
                       placeholder="050-000-0000"
                       className="w-full bg-white border border-amber-200 rounded-xl px-4 py-3 text-amber-950 placeholder-amber-300 focus:outline-none focus:border-orange-400 focus:ring-2 focus:ring-orange-100 transition-all"
                     />
+                    <FieldError id="dw-phone-error" message={errors.phone} />
                   </div>
                 </div>
 
                 <div>
                   <label
-                    htmlFor="email"
+                    htmlFor="dw-email"
                     className="block text-amber-900 font-semibold mb-2 text-sm"
                   >
                     אימייל
@@ -266,27 +339,33 @@ export default function Contact() {
                   <input
                     type="email"
                     dir="ltr"
-                    id="email"
+                    id="dw-email"
                     name="email"
+                    aria-invalid={errors.email ? true : undefined}
+                    aria-describedby="dw-email-error"
                     value={formData.email}
                     onChange={handleChange}
                     placeholder="israel@example.com"
                     className="w-full bg-white border border-amber-200 rounded-xl px-4 py-3 text-amber-950 placeholder-amber-300 focus:outline-none focus:border-orange-400 focus:ring-2 focus:ring-orange-100 transition-all"
                   />
+                  <FieldError id="dw-email-error" message={errors.email} />
                 </div>
 
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                   <div>
                     <label
-                      htmlFor="audience"
+                      htmlFor="dw-audience"
                       className="block text-amber-900 font-semibold mb-2 text-sm"
                     >
                       סוג הקבוצה *
                     </label>
                     <select
-                      id="audience"
+                      id="dw-audience"
                       name="audience"
                       required
+                      aria-required="true"
+                      aria-invalid={errors.audience ? true : undefined}
+                      aria-describedby="dw-audience-error"
                       value={formData.audience}
                       onChange={handleChange}
                       className="w-full bg-white border border-amber-200 rounded-xl px-4 py-3 text-amber-950 focus:outline-none focus:border-orange-400 focus:ring-2 focus:ring-orange-100 transition-all"
@@ -298,18 +377,22 @@ export default function Contact() {
                         </option>
                       ))}
                     </select>
+                    <FieldError id="dw-audience-error" message={errors.audience} />
                   </div>
                   <div>
                     <label
-                      htmlFor="groupSize"
+                      htmlFor="dw-groupSize"
                       className="block text-amber-900 font-semibold mb-2 text-sm"
                     >
                       גודל קבוצה *
                     </label>
                     <select
-                      id="groupSize"
+                      id="dw-groupSize"
                       name="groupSize"
                       required
+                      aria-required="true"
+                      aria-invalid={errors.groupSize ? true : undefined}
+                      aria-describedby="dw-groupSize-error"
                       value={formData.groupSize}
                       onChange={handleChange}
                       className="w-full bg-white border border-amber-200 rounded-xl px-4 py-3 text-amber-950 focus:outline-none focus:border-orange-400 focus:ring-2 focus:ring-orange-100 transition-all"
@@ -321,12 +404,16 @@ export default function Contact() {
                         </option>
                       ))}
                     </select>
+                    <FieldError
+                      id="dw-groupSize-error"
+                      message={errors.groupSize}
+                    />
                   </div>
                 </div>
 
                 <div>
                   <label
-                    htmlFor="date"
+                    htmlFor="dw-date"
                     className="block text-amber-900 font-semibold mb-2 text-sm"
                   >
                     תאריך מועדף
@@ -334,7 +421,7 @@ export default function Contact() {
                   <input
                     type="date"
                     dir="ltr"
-                    id="date"
+                    id="dw-date"
                     name="date"
                     value={formData.date}
                     onChange={handleChange}
@@ -344,13 +431,13 @@ export default function Contact() {
 
                 <div>
                   <label
-                    htmlFor="message"
+                    htmlFor="dw-message"
                     className="block text-amber-900 font-semibold mb-2 text-sm"
                   >
                     פרטים נוספים
                   </label>
                   <textarea
-                    id="message"
+                    id="dw-message"
                     name="message"
                     rows={4}
                     value={formData.message}
